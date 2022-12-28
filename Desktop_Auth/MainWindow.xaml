@@ -1,0 +1,64 @@
+﻿<Window x:Class="Desktop_Auth.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktop_Auth"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Текст и картинка-->
+        <TextBlock Text="Телеком Нева Связь" Grid.ColumnSpan="2" Grid.RowSpan="2" FontSize="30" VerticalAlignment="Center" Margin="30 0 0 0" />
+        <Image Source="/Image/Лого ТНС.jpg" Grid.Column="2" Height="150" Width="200" Grid.RowSpan="2"/>
+
+        <!-- Строка ввода номера -->
+        <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="left">
+            <DockPanel>
+                <TextBlock Text="Номер" FontSize="20" FontFamily="Arial" Margin="0 0 50 0"/>
+                <TextBox Width="250" Height="30" Name="Input_Number" KeyUp="Input_Number_KeyUp" Background="#B5DEFA"/>
+            </DockPanel>
+        </StackPanel>
+        
+        <!-- Строка ввода пароля -->
+        <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="left">
+            <DockPanel>
+                <TextBlock Text="Пароль" FontSize="20" FontFamily="Arial" Margin="0 0 40 0"/>
+                <PasswordBox Width="250" Height="30" Name="Input_Password" KeyUp="Input_Password_KeyUp" Background="#B5DEFA"/>
+            </DockPanel>
+        </StackPanel>
+        
+        <!-- Строка ввода случайного кода -->
+        <StackPanel Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="left">
+            <DockPanel>
+                <TextBlock Text="Код" FontSize="20" FontFamily="Arial" Margin="0 0 75 0"/>
+                <TextBox Width="200" Height="30" Background="#B5DEFA" Name="CodeBox"/>
+                <Button Width="30" Height="30" Margin="20 0 0 0" BorderBrush="Thistle" Name="RefreshBtn" Click="RefreshBtn_Click">
+                    <Image Source="/Image/На авторизацию_Обновление кода.jpg" />
+                </Button>
+            </DockPanel>
+        </StackPanel>
+        
+        <!-- Кнопка входа и отмены -->
+        <StackPanel Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" >
+            <DockPanel>
+                <Button Height="30" Width="100" Margin="110 0 0 0" Name="DeliteBtn" Content="Отмена" FontSize="16" Click="DeliteBtn_Click" Background="#B5DEFA"/>
+                <Button Height="30" Width="100" Margin="10 0 0 0" Name="EnterBtn" Content="Вход" FontSize="16" Click="EnterBtn_Click" Background="#B5DEFA"/>
+            </DockPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>
